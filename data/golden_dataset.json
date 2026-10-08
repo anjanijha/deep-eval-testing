@@ -1,0 +1,26 @@
+[
+    {
+        "id": "TC001",
+        "category": "refund",
+        "question": "What is the refund policy?",
+        "expected_answer": "Customers can request a refund within 30 days of purchase."
+    },
+    {
+        "id": "TC002",
+        "category": "support",
+        "question": "How can I contact support?",
+        "expected_answer": "Customers can contact support through email or phone."
+    },
+    {
+        "id": "TC003",
+        "category": "payment",
+        "question": "What payment methods are supported?",
+        "expected_answer": "Credit cards, debit cards and UPI are supported."
+    },
+    {
+        "id": "TC004",
+        "category": "password",
+        "question": "How do I reset my password?",
+        "expected_answer": "Customers can reset their password using the password reset link."
+    }
+]

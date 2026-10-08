@@ -1,0 +1,6 @@
+deepeval
+openai
+python-dotenv
+pytest
+pytest-html
+portalocker

@@ -1,0 +1,44 @@
+image: python:3.12
+
+stages:
+  - validate
+  - ai-evaluation
+
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+
+cache:
+  paths:
+    - .cache/pip
+
+
+before_script:
+  - python --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+
+
+validate:
+  stage: validate
+
+  script:
+    - python -m compileall app evaluation tests
+
+
+ai-quality-gate:
+  stage: ai-evaluation
+
+  script:
+    - mkdir -p reports
+    - python evaluation/quality_gate.py
+
+  artifacts:
+
+    when: always
+
+    paths:
+      - reports/evaluation_summary.json
+
+    expire_in: 7 days
